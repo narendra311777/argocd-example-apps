@@ -12,10 +12,11 @@ spec:
     #path: dev
   destination:
     server: https://kubernetes.default.svc
-    namespace: default
+    namespace: myapp
+    
   syncPolicy:
   - syncOptions: 
-    CreateNamespace: true
-    automated:
+    CreateNamespace=true
+      automated:
       selfHeal: true // if any  changes apply from kubectl it will revert
       prune: true  //if any file deleted in config it deletes that conf in clust
