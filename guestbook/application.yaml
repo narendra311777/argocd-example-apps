@@ -15,8 +15,9 @@ spec:
     namespace: myapp
     
   syncPolicy:
-  - syncOptions: 
-    CreateNamespace=true
-      automated:
-      selfHeal: true // if any  changes apply from kubectl it will revert
-      prune: true  //if any file deleted in config it deletes that conf in clust
+    syncOptions:
+    - CreateNamespace=true
+
+  automated:
+    selfHeal: true
+    prune: true
